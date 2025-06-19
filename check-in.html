@@ -14,32 +14,7 @@
     <h1>Willkommen auf meiner Website</h1>
     <p>Dies ist eine Beispielseite zur Demonstration von Mixpanel Event-Tracking.</p>
 
-    <!-- Ereignis-Tracking Skript -->
-    <script>
-        //Import Mixpanel SDK
-        import mixpanel from "mixpanel-browser";
  
-        // Near entry of your product, init Mixpanel
-        mixpanel.init("2ba6381c0f7876bf7cb5edd3c1cd7a27", {
-          debug: true,
-          track_pageview: true,
-          persistence: "localStorage",
-        });
-    // Tracken, wenn der Benutzer auf die Seite kommt
-    window.onload = function() {
-        mixpanel.track('Arrival', {
-            'page': window.location.pathname
-        });
-        console.log('Arrival event tracked');
-    };
-
-    // Tracken, wenn der Benutzer die Seite verlässt
-    window.onbeforeunload = function() {
-        mixpanel.track('Departure', {
-            'page': window.location.pathname
-        });
-    };
-    </script>
 </body>
 </html>
 
