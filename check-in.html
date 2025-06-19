@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mixpanel Event Tracking</title>
+
+    <!-- Mixpanel Skript einbinden -->
+    <script type="text/javascript">
+    (function(c,a){if(!a.__SV){a.__SV=1;var b=window;try{
+    var d,m,j,k=b.location,f=k.hash;k=k.pathname+f;
+    d=function(l,n){m=a.createElement(n);m.async=!0;m.src=l;
+    a.getElementsByTagName(n)[0].parentNode.appendChild(m)};
+    d(c+"://cdn.mxpnl.com/libs/mixpanel-2-latest.min.js","script");
+    b.mixpanel=a.mixpanel||[];for(;b.mixpanel.length;)b.mixpanel.shift().call(b.mixpanel);
+    b.mixpanel.init=!0;b.mixpanel.push(["init","YOUR_PROJECT_TOKEN",c]);
+    b.mixpanel.push(["track","Page Viewed"]);
+    b.__MXP_NONCE__=Math.random()}catch(p){}})("https:",document);
+    </script>
+</head>
+<body>
+    <h1>Willkommen auf meiner Website</h1>
+    <p>Dies ist eine Beispielseite zur Demonstration von Mixpanel Event-Tracking.</p>
+
+    <!-- Ereignis-Tracking Skript -->
+    <script>
+    // Tracken, wenn der Benutzer auf die Seite kommt
+    window.onload = function() {
+        mixpanel.track('Arrival', {
+            'page': window.location.pathname
+        });
+        console.log('Arrival event tracked');
+    };
+
+    // Tracken, wenn der Benutzer die Seite verlässt
+    window.onbeforeunload = function() {
+        mixpanel.track('Departure', {
+            'page': window.location.pathname
+        });
+    };
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
